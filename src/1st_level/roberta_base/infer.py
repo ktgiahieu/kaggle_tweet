@@ -79,9 +79,9 @@ def run():
                 char_pred_test_end.append(
                     utils.token_level_to_char_level(tweet, offsets[px], outputs_end[px]))
 
-    with open('/content/very_final/pickles/roberta-char_pred_test_start.pkl', 'wb') as handle:
+    with open('/content/kaggle_tweet/pickles/roberta-char_pred_test_start.pkl', 'wb') as handle:
         pickle.dump(char_pred_test_start, handle)
-    with open('/content/very_final/pickles/roberta-char_pred_test_end.pkl', 'wb') as handle:
+    with open('/content/kaggle_tweet/pickles/roberta-char_pred_test_end.pkl', 'wb') as handle:
         pickle.dump(char_pred_test_end, handle)
 
 

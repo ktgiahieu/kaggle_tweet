@@ -6,8 +6,8 @@ TOKENIZER_PATH = '/content/kaggle_tweet/src/1st_level/roberta_tokenizer'
 TRAINING_FILE = '/content/kaggle_tweet/data/train_folds.csv'
 TEST_FILE = '/content/kaggle_tweet/data/test.csv'
 SUB_FILE = '/content/kaggle_tweet/data/sample_submission.csv'
-MODEL_SAVE_PATH = 'kaggle_tweet/src/1st_level/roberta_base/model_save'
-TRAINED_MODEL_PATH = 'kaggle_tweet/src/1st_level/roberta_base/model_save'
+MODEL_SAVE_PATH = '/content/kaggle_tweet/src/1st_level/roberta_base/model_save'
+TRAINED_MODEL_PATH = '/content/kaggle_tweet/src/1st_level/roberta_base/model_save'
 
 # Model config
 MODEL_CONFIG = 'deepset/roberta-base-squad2'

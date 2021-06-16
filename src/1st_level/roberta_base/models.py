@@ -18,9 +18,9 @@ class TweetModel(transformers.BertPreTrainedModel):
     def forward(self, ids, mask, token_type_ids):
         # sequence_output of N_LAST_HIDDEN + Embedding states
         # (N_LAST_HIDDEN + 1, batch_size, num_tokens, 768)
-        _, _, out = self.roberta(ids, attention_mask=mask,
+        out = self.roberta(ids, attention_mask=mask,
                                  token_type_ids=token_type_ids)
-
+        out = out.hidden_states
         out = torch.stack(
             tuple(out[-i - 1] for i in range(config.N_LAST_HIDDEN)), dim=0)
         out_mean = torch.mean(out, dim=0)
