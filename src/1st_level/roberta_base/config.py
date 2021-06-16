@@ -2,12 +2,12 @@ import tokenizers
 
 
 # Paths
-TOKENIZER_PATH = '/content/very_final/roberta_tokenizer'
-TRAINING_FILE = '/content/very_final/data/train_folds.csv'
-TEST_FILE = '/content/very_final/data/test.csv'
-SUB_FILE = '/content/very_final/data/sample_submission.csv'
-MODEL_SAVE_PATH = '/content/very_final/roberta_base/model_save'
-TRAINED_MODEL_PATH = '/content/very_final/roberta_base/model_save'
+TOKENIZER_PATH = 'kaggle_tweet/src/1st_level/roberta_base/roberta_tokenizer'
+TRAINING_FILE = '/content/kaggle_tweet/data/train_folds.csv'
+TEST_FILE = '/content/kaggle_tweet/data/test.csv'
+SUB_FILE = '/content/kaggle_tweet/data/sample_submission.csv'
+MODEL_SAVE_PATH = 'kaggle_tweet/src/1st_level/roberta_base/model_save'
+TRAINED_MODEL_PATH = 'kaggle_tweet/src/1st_level/roberta_base/model_save'
 
 # Model config
 MODEL_CONFIG = 'deepset/roberta-base-squad2'
@@ -22,9 +22,9 @@ EARLY_STOPPING_DELTA = None
 TRAIN_BATCH_SIZE = 32
 VALID_BATCH_SIZE = 32
 MAX_LEN = 96  # actually = 86
-TOKENIZER = tokenizers.ByteLevelBPETokenizer(
-    vocab_file=f'{TOKENIZER_PATH}/vocab.json',
-    merges_file=f'{TOKENIZER_PATH}/merges.txt',
+TOKENIZER = tokenizers.ByteLevelBPETokenizer.from_files(
+    vocab_filename=f'{TOKENIZER_PATH}/vocab.json',
+    merges_filename=f'{TOKENIZER_PATH}/merges.txt',
     lowercase=True,
     add_prefix_space=True)
 HIDDEN_SIZE = 768
