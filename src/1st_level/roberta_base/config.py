@@ -2,7 +2,7 @@ import tokenizers
 
 
 # Paths
-TOKENIZER_PATH = 'kaggle_tweet/src/1st_level/roberta_base/roberta_tokenizer'
+TOKENIZER_PATH = '/content/kaggle_tweet/src/1st_level/roberta_tokenizer'
 TRAINING_FILE = '/content/kaggle_tweet/data/train_folds.csv'
 TEST_FILE = '/content/kaggle_tweet/data/test.csv'
 SUB_FILE = '/content/kaggle_tweet/data/sample_submission.csv'
@@ -22,7 +22,8 @@ EARLY_STOPPING_DELTA = None
 TRAIN_BATCH_SIZE = 32
 VALID_BATCH_SIZE = 32
 MAX_LEN = 96  # actually = 86
-TOKENIZER = tokenizers.ByteLevelBPETokenizer.from_files(
+print(f'{TOKENIZER_PATH}/vocab.json')
+TOKENIZER = tokenizers.ByteLevelBPETokenizer.from_file(
     vocab_filename=f'{TOKENIZER_PATH}/vocab.json',
     merges_filename=f'{TOKENIZER_PATH}/merges.txt',
     lowercase=True,
